@@ -1,11 +1,10 @@
 🔬 Blood Group Detection from Fingerprints
 This project uses deep learning to predict blood groups from fingerprint images. The model is built using ResNet and trained with the Fastai library for efficient transfer learning.
 
-Overview:
+📌 Overview
 Traditional blood group testing requires physical blood samples, but this project explores a non-invasive approach by analyzing fingerprint patterns. The model is trained on a Kaggle dataset and fine-tuned using data augmentation techniques to improve generalization.
 
-Technologies Used:
-
+🛠️ Technologies Used
 Python
 
 Fastai
@@ -14,8 +13,7 @@ PyTorch
 
 ResNet (Transfer Learning)
 
-Methodology:
-
+🔍 Methodology
 Dataset: Used a publicly available fingerprint dataset from Kaggle.
 
 Preprocessing: Applied augmentations like rotation, flipping, and brightness adjustments to enhance generalization.
@@ -26,10 +24,29 @@ Evaluation: Achieved 91% accuracy on test data.
 
 Real-World Testing: Observed performance drop on real-time fingerprints due to quality differences, highlighting the need for fingerprint scanner sensors.
 
-Future Improvements:
-
+🚀 Future Improvements
 Use fingerprint scanners for better real-world accuracy.
 
 Train on more diverse datasets to improve generalization.
 
 Explore contrast enhancement and other preprocessing techniques.
+
+📌 How to Use
+
+
+Clone the repository:
+
+git clone https://github.com/narasimha07-here/Blood-group-detection.git  
+cd Blood-group-detection
+
+Install dependencies:
+
+pip install fastai torch  
+
+
+Run the model on an image:
+
+from fastai.vision.all import *  
+model = load_learner('blood_group_model.pkl')  
+pred, _, _ = model.predict('sample_fingerprint.jpg')  
+print(f"Predicted Blood Group: {pred}")  
